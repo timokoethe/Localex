@@ -13,6 +13,10 @@ struct ContentView: View {
             Tab("Tokenizer", systemImage: "text.word.spacing") {
                 TokenizerView()
             }
+            
+            Tab("Recognizer", systemImage: "globe.europe.africa") {
+                RecognizerView()
+            }
         }
     }
 }
