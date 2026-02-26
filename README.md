@@ -13,5 +13,6 @@
 
 - 🔤 **Tokenization**: Split text into words, sentences, and paragraphs  
 - 🌍 **Language Identification**: Detect the dominant language of text  
+- 🧬 **Word Embeddings**: Generate and inspect the vector representation of a word
 - ⚡ **On-device & Offline**: No internet connection required  
 - 🎨 **Minimal SwiftUI UI**: Clean interface to visualize NLP results  

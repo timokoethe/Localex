@@ -17,6 +17,10 @@ struct ContentView: View {
             Tab("Recognizer", systemImage: "globe.europe.africa") {
                 RecognizerView()
             }
+            
+            Tab("Embedding", systemImage: "point.3.connected.trianglepath.dotted") {
+                EmbeddingView()
+            }
         }
     }
 }
