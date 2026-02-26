@@ -10,3 +10,8 @@
 ⚠️ **Disclaimer**: This app is intended for demonstration and learning purposes only and is not production-ready.
 
 ## ✨ Features
+
+- 🔤 **Tokenization**: Split text into words, sentences, and paragraphs  
+- 🌍 **Language Identification**: Detect the dominant language of text  
+- ⚡ **On-device & Offline**: No internet connection required  
+- 🎨 **Minimal SwiftUI UI**: Clean interface to visualize NLP results  
