@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+/// A SwiftUI view that demonstrates word-level tokenization using `NLTokenizer`.
+///
+/// `TokenizerView` provides a simple interface where users can enter text,
+/// trigger tokenization, and inspect the resulting word tokens.
+///
+/// The view is backed by `TokenizerViewModel`, which manages the input text,
+/// performs the tokenization logic, and stores the resulting tokens.
+///
+/// UI Behavior:
+/// - A `TextField` allows users to enter arbitrary text.
+/// - Tapping **Tokenize** calls `vm.tokenize()` and splits the input into word tokens.
+/// - Each token is displayed as a separate `Text` row.
+/// - After tokenization, a **Reset** button appears to clear the current state.
+/// - The **Tokenize** button is disabled when the input field is empty.
 struct TokenizerView: View {
     @State private var vm: TokenizerViewModel = .init()
     

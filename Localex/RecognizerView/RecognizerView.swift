@@ -8,6 +8,25 @@
 import SwiftUI
 import NaturalLanguage
 
+/// A SwiftUI view that demonstrates language identification using `NLLanguageRecognizer`.
+///
+/// `RecognizerView` allows users to enter arbitrary text and analyze which
+/// language(s) the system detects, along with their associated confidence scores.
+///
+/// The view is backed by `RecognizerViewModel`, which processes the input text,
+/// retrieves language hypotheses, sorts them by probability, and exposes the
+/// results to the UI.
+///
+/// UI Behavior:
+/// - A `TextField` captures the user’s input text.
+/// - Tapping **Recognize** calls `vm.recognize()` and performs language detection.
+/// - The detected languages are displayed in descending order of confidence.
+/// - Each row shows:
+///   - The language code (`rawValue`)
+///   - A formatted percentage value (two decimal places)
+///   - A `ProgressView` visualizing the confidence score
+/// - After recognition, a **Reset** button appears to clear the current state.
+/// - The **Recognize** button is disabled when the input field is empty.
 struct RecognizerView: View {
     @State private var vm: RecognizerViewModel = .init()
     

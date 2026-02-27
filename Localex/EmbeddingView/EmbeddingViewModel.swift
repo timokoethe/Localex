@@ -21,6 +21,17 @@ class EmbeddingViewModel {
         self.vector = []
     }
     
+    /// Generates a word embedding vector for the first word in the current input.
+    ///
+    /// This function performs the full embedding retrieval cycle:
+    /// - Extracts the first word from `inputText` (split by whitespace)
+    /// - Loads the system’s English word embedding model using `NLEmbedding.wordEmbedding(for:)`
+    /// - Requests the high-dimensional vector representation via `vector(for:)`
+    /// - Stores the resulting `[Double]` in `vector` if available
+    /// - Updates the state to indicate whether a valid embedding was generated
+    ///
+    /// If no embedding model is available or the word is not part of the model’s
+    /// vocabulary, no vector is stored and `hasEmbedding` remains `false`.
     func getWordEmbedding() {
         let firstWord = inputText.split(separator: " ").first ?? ""
         

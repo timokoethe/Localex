@@ -24,6 +24,17 @@ class RecognizerViewModel {
         self.languages = []
     }
     
+    /// Performs language recognition on the current input text.
+    ///
+    /// This function executes the full language detection cycle:
+    /// - Passes `inputText` to `recognizer.processString(_:)`
+    /// - Retrieves up to 10 language hypotheses using `languageHypotheses(withMaximum:)`
+    /// - Sorts the resulting candidates in descending order by probability
+    /// - Stores the sorted results in `languages`
+    /// - Updates the state to indicate whether recognition produced any results
+    ///
+    /// Each hypothesis consists of a language identifier (`NLLanguage`)
+    /// and a probability score (`Double`) between 0.0 and 1.0.
     func recognize() {
         recognizer.processString(inputText)
         languages = recognizer
