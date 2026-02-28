@@ -34,15 +34,19 @@ struct EmbeddingView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                TextField("Type here ...", text: $vm.inputText)
+                TextField("Type word here ...", text: $vm.inputText)
                     .textFieldStyle(.roundedBorder)
                     .lineLimit(1)
                 
+                Text("Dimension: " + vm.vector.count.description)
+                
                 ScrollView {
-                    Text("Dimensions: " + vm.vector.count.description)
                     ForEach(vm.vector, id: \.self) { vector in
-                        Text(vector, format: .number.precision(.fractionLength(2)))
-                            .foregroundStyle(.secondary)
+                        HStack {
+                            Text(vector, format: .number.precision(.fractionLength(2)))
+                                .foregroundStyle(.secondary)
+                            Spacer()
+                        }
                     }
                 }
                 .scrollBounceBehavior(.basedOnSize)
@@ -59,7 +63,6 @@ struct EmbeddingView: View {
                     }
                     .buttonStyle(.borderedProminent)
                     .disabled(vm.inputText.isEmpty)
-                    
                 }
             }
             .navigationTitle("Embedding")

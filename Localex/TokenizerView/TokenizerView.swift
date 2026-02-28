@@ -27,7 +27,7 @@ struct TokenizerView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                TextField("Type here ...", text: $vm.inputText)
+                TextField("Type sentence here ...", text: $vm.inputText)
                     .textFieldStyle(.roundedBorder)
                     .lineLimit(1)
                 
@@ -46,7 +46,6 @@ struct TokenizerView: View {
                     }
                     .buttonStyle(.borderedProminent)
                     .disabled(vm.inputText.isEmpty)
-                    
                 }
             }
             .navigationTitle("Tokenizer")

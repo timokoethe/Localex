@@ -33,7 +33,7 @@ struct RecognizerView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                TextField("Type here ...", text: $vm.inputText)
+                TextField("Type sentence here ...", text: $vm.inputText)
                     .textFieldStyle(.roundedBorder)
                     .lineLimit(1)
                 
@@ -61,7 +61,6 @@ struct RecognizerView: View {
                     }
                     .buttonStyle(.borderedProminent)
                     .disabled(vm.inputText.isEmpty)
-                    
                 }
             }
             .navigationTitle("Recognizer")
