@@ -13,12 +13,14 @@ class EmbeddingViewModel {
     var hasEmbedding: Bool
     var inputText: String   // The text currently entered by the user.
     var vector: [Double]
+    var word: String
     
     /// Initializes all variables with their values.
     init() {
         self.hasEmbedding = false
         self.inputText = ""
         self.vector = []
+        self.word = ""
     }
     
     /// Generates a word embedding vector for the first word in the current input.
@@ -38,6 +40,7 @@ class EmbeddingViewModel {
         if let wordEmbedding = NLEmbedding.wordEmbedding(for: .english) {
             if let wordVector = wordEmbedding.vector(for: String(firstWord)) {
                 self.vector = wordVector
+                self.word = String(firstWord)
             }
         }
         
@@ -50,6 +53,7 @@ class EmbeddingViewModel {
     func reset() {
         inputText.removeAll()
         vector.removeAll()
+        word.removeAll()
         hasEmbedding = false
     }
 }

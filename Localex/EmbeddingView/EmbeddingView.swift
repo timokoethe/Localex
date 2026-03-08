@@ -34,9 +34,21 @@ struct EmbeddingView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Typebar(inputType: .word, inputText: $vm.inputText)
-                
-                Text("Dimension: " + vm.vector.count.description)
+                if !vm.word.isEmpty && !vm.vector.isEmpty {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Word: ").fontWeight(.bold)
+                            Text("Dimension: ").fontWeight(.bold)
+                        }
+                        VStack(alignment: .leading) {
+                            Text(vm.word)
+                            Text(vm.vector.count.description)
+                        }
+                        Spacer()
+                    }
+                } else {
+                    Typebar(inputType: .word, inputText: $vm.inputText)
+                }
                 
                 ScrollView {
                     ForEach(vm.vector, id: \.self) { vector in
