@@ -34,9 +34,7 @@ struct EmbeddingView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                TextField("Type word here ...", text: $vm.inputText)
-                    .textFieldStyle(.roundedBorder)
-                    .lineLimit(1)
+                Typebar(inputType: .word, inputText: $vm.inputText)
                 
                 Text("Dimension: " + vm.vector.count.description)
                 
@@ -50,7 +48,6 @@ struct EmbeddingView: View {
                     }
                 }
                 .scrollBounceBehavior(.basedOnSize)
-
                 
                 Spacer()
                 

@@ -33,9 +33,7 @@ struct RecognizerView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                TextField("Type sentence here ...", text: $vm.inputText)
-                    .textFieldStyle(.roundedBorder)
-                    .lineLimit(1)
+                Typebar(inputType: .sentence, inputText: $vm.inputText)
                 
                 ForEach(vm.languages, id: \.key) { language, confidence in
                     VStack(alignment: .leading, spacing: 6) {
